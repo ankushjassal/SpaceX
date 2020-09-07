@@ -1,0 +1,58 @@
+<div id="main-container">
+<h3>{{title}}</h3>
+  <div class="section-left">
+    <p><b>Filters</b></p>
+    <p>Launch Year</p>
+    <table>
+      <tr>
+        <td>2006</td><td width="30%">&nbsp;</td><td>2007</td>
+      </tr>
+      <tr>
+        <td>2008</td><td width="30%">&nbsp;</td><td>2009</td>
+      </tr>
+      <tr>
+        <td>2010</td><td width="30%">&nbsp;</td><td>2011</td>
+      </tr>
+      <tr>
+        <td>2012</td><td width="30%">&nbsp;</td><td>2013</td>
+      </tr>
+      <tr>
+        <td>2014</td><td width="30%">&nbsp;</td><td>2015</td>
+      </tr>
+      <tr>
+        <td>2016</td><td width="30%">&nbsp;</td><td>2017</td>
+      </tr>
+      <tr>
+        <td>2018</td><td width="30%">&nbsp;</td><td>2019</td>
+      </tr>
+      <tr>
+        <td>2020</td>
+      </tr>
+    </table>
+    <p>Successful Launch</p>
+    <table>
+      <tr>
+        <td (click)="LaunchSuccess($event)">True</td><td width="30%"></td><td (click)="LaunchFail($event)">False</td>
+      </tr>
+    </table>
+    <p>Successful Landing</p>
+    <table>
+      <tr>
+        <td>True</td><td width="30%"></td><td>False</td>
+      </tr> 
+    </table>
+  </div>
+  <div class="section-right">
+    <div class="data-box" *ngFor="let space of spacex">
+      <img src="{{space.links.mission_patch_small}}" width="200" height="150" />
+      <p><b>{{space.mission_name}} #{{space.flight_number}}</b></p>
+      <span><b>Mission Ids: {{space.mission_id}}</b></span>
+      <ul>
+        <li>list mission Ids</li>
+      </ul>
+      <span><b>Launch Year: </b><span>{{space.launch_year}}</span></span><br/>
+      <span><b>Successful Launch: </b><span>{{space.launch_success}}</span></span><br/>
+      <span><b>Successful Landing: </b><span>{{space.land_success}}</span></span>
+    </div>    
+  </div>
+</div>
